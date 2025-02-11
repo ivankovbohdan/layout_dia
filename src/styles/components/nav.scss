@@ -1,0 +1,36 @@
+.nav {
+  padding: 0;
+
+  &--header {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+
+    &--column {
+      flex-direction: column;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-white;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      @include hover-line;
+    }
+  }
+}

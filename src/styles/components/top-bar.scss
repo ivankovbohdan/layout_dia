@@ -1,0 +1,61 @@
+.top-bar {
+  font-family: 'Poppins', sans-serif;
+  padding: 20px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onDesktop {
+    padding: 48px 0;
+  }
+
+  &__left-side {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  &__menu-btn {
+    text-decoration: none;
+    width: 24px;
+    height: 24px;
+
+    i {
+      font-size: 24px;
+      color: $c-white;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__hire-link {
+    text-transform: uppercase;
+    color: $c-white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 3px;
+    padding-bottom: 8px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      border-radius: 4px;
+      background-color: $c-accent;
+    }
+
+    &--menu {
+      &::after {
+        background-color: $c-white;
+      }
+    }
+  }
+}

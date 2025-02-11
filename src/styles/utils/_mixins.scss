@@ -1,6 +1,39 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop-big {
+  @media (min-width: $desktop-big-min-width) {
+    @content;
+  }
+}
+
+@mixin hover-line($bg-color: $c-accent) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    border-radius: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: $bg-color;
+
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform 0.5s;
+  }
+
+  &:hover::before {
+    transform: scale(1);
   }
 }
